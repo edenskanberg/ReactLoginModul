@@ -9,8 +9,7 @@ const useForm = validate => {
         password2: ''
 
     })
-    const [errors, setErrors] = useState ({});
-    const [isSubmitting, setIsSubmitting] = useState (false)
+    const [errors, setErrors] = useState ({})
 
     const handleChange = e => {
         const { name, value} = e.target 
@@ -23,10 +22,9 @@ const useForm = validate => {
    
   const handleSubmit = e => {
       e.prevnentDefault();
-//Denna kod gör så att sidan inte refreshar när du klickar på signup men det funkar inte för mig, hjälp!
+
       setErrors(validateInfo(value));
-      setIsSubmitting (true);
-  };  
+  };  //Denna kod gör så att sidan inte refreshar när du klickar på signup 
     
 return {handleChange, values, handleSubmit, errors} //whenever i change something i want it to update the values
 };
